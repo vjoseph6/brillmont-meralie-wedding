@@ -1,0 +1,439 @@
+/* Invitation Page Styles - Wedding Theme */
+.invitation-page {
+  min-height: 100vh;
+  background: var(--ivory);
+  padding-top: 100px; /* Account for fixed navigation */
+  position: relative;
+}
+
+.page-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-xl);
+  position: relative;
+  z-index: 2;
+}
+
+.wedding-content {
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Section Styles */
+section {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  margin: var(--space-xl) 0;
+  padding: var(--space-2xl);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-soft);
+  transition: all var(--transition-normal);
+  border: 1px solid rgba(247, 231, 206, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-romantic);
+  opacity: 0.05;
+  transition: left var(--transition-slow);
+}
+
+section:hover::before {
+  left: 0;
+}
+
+section:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-romantic);
+}
+
+section h2 {
+  background: var(--gradient-champagne);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 2.8rem;
+  margin-bottom: var(--space-xl);
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 2;
+}
+
+section h3 {
+  color: var(--text-primary);
+  font-size: 2rem;
+  margin-bottom: var(--space-lg);
+  font-family: var(--font-serif);
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+}
+
+/* Love Story Section */
+.love-story {
+  text-align: center;
+  background: var(--gradient-blush);
+}
+
+.story-content p {
+  font-size: 1.2rem;
+  line-height: 1.9;
+  color: var(--text-primary);
+  margin-bottom: var(--space-lg);
+  text-align: justify;
+  font-family: var(--font-serif);
+  position: relative;
+  z-index: 2;
+}
+
+.signature {
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--rose-gold);
+  font-weight: 500;
+  text-align: right;
+  margin-top: var(--space-xl);
+  font-family: var(--font-display);
+  position: relative;
+  z-index: 2;
+}
+
+/* Countdown Section */
+.countdown-section {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  margin: var(--space-lg) 0;
+}
+
+/* Save the Date Section */
+.save-the-date {
+  text-align: center;
+  background: var(--gradient-champagne);
+}
+
+.date-info h3 {
+  color: var(--text-primary);
+  margin-bottom: var(--space-xl);
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+}
+
+.when-where {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2xl);
+  flex-wrap: wrap;
+}
+
+.date-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 1.3rem;
+  color: var(--text-primary);
+  font-weight: 500;
+  font-family: var(--font-serif);
+  background: rgba(255, 255, 255, 0.7);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  transition: all var(--transition-normal);
+}
+
+.date-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+}
+
+.date-item .icon {
+  font-size: 1.8rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Video Section */
+.video-section {
+  text-align: center;
+  background: var(--gradient-sage);
+}
+
+.video-container {
+  margin-top: var(--space-xl);
+}
+
+.video-placeholder {
+  background: rgba(255, 255, 255, 0.8);
+  border: 3px dashed var(--sage-green);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  color: var(--sage-green);
+  transition: all var(--transition-normal);
+}
+
+.video-placeholder:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-medium);
+}
+
+.video-placeholder p {
+  font-size: 1.4rem;
+  margin-bottom: var(--space-sm);
+  font-family: var(--font-serif);
+  font-weight: 500;
+}
+
+.video-placeholder small {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* Look Forward Section */
+.look-forward {
+  text-align: center;
+  background: var(--gradient-rose);
+}
+
+.look-forward p {
+  font-size: 1.3rem;
+  line-height: 1.9;
+  color: var(--text-primary);
+  font-style: italic;
+  font-family: var(--font-serif);
+  position: relative;
+  z-index: 2;
+}
+
+/* Dress Code Section */
+.dress-code {
+  text-align: center;
+  background: var(--gradient-blush);
+}
+
+.dress-info h3 {
+  color: var(--text-primary);
+  margin-bottom: var(--space-xl);
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+}
+
+.dress-items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.dress-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius-lg);
+  font-size: 1.2rem;
+  font-family: var(--font-serif);
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-soft);
+}
+
+.dress-item:hover {
+  transform: translateX(10px);
+  box-shadow: var(--shadow-medium);
+}
+
+.dress-item .icon {
+  font-size: 1.8rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.color-preference {
+  font-size: 1.2rem;
+  color: var(--rose-gold);
+  font-weight: 600;
+  font-family: var(--font-serif);
+  background: rgba(255, 255, 255, 0.8);
+  padding: var(--space-md);
+  border-radius: var(--radius-lg);
+  display: inline-block;
+}
+
+/* FAQ Section */
+.faq-section {
+  text-align: left;
+  background: var(--gradient-champagne);
+}
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.faq-item {
+  border-bottom: 2px solid rgba(247, 231, 206, 0.5);
+  padding-bottom: var(--space-lg);
+  background: rgba(255, 255, 255, 0.6);
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-normal);
+}
+
+.faq-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-item h3 {
+  color: var(--rose-gold);
+  font-size: 1.4rem;
+  margin-bottom: var(--space-md);
+  font-weight: 700;
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.faq-item p {
+  color: var(--text-primary);
+  line-height: 1.7;
+  font-size: 1.1rem;
+  font-family: var(--font-serif);
+}
+
+/* Private Invitation Section */
+.private-invitation {
+  background: var(--gradient-rose);
+  color: var(--text-primary);
+  text-align: center;
+  border: 3px solid var(--rose-gold);
+}
+
+.private-invitation h2 {
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+}
+
+.private-invitation p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: var(--space-md);
+  font-family: var(--font-serif);
+  position: relative;
+  z-index: 2;
+}
+
+/* Coming Soon Section */
+.coming-soon {
+  text-align: center;
+  padding: var(--space-2xl);
+  background: var(--gradient-romantic);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-romantic);
+  border: 2px solid var(--champagne-gold);
+}
+
+.coming-soon h2 {
+  background: var(--gradient-champagne);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 2.8rem;
+  margin-bottom: var(--space-md);
+  font-family: var(--font-display);
+}
+
+.coming-soon p {
+  color: var(--text-secondary);
+  font-size: 1.3rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .page-content {
+    padding: var(--space-md);
+  }
+  
+  section {
+    padding: var(--space-xl) var(--space-lg);
+    margin: var(--space-md) 0;
+  }
+  
+  section h2 {
+    font-size: 2.2rem;
+  }
+  
+  .when-where {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+  
+  .dress-item {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-sm);
+  }
+  
+  .faq-item h3 {
+    font-size: 1.2rem;
+  }
+  
+  .date-item {
+    font-size: 1.1rem;
+    padding: var(--space-sm) var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: var(--space-lg) var(--space-md);
+  }
+  
+  section h2 {
+    font-size: 2rem;
+  }
+  
+  .story-content p {
+    font-size: 1.1rem;
+  }
+  
+  .date-item {
+    font-size: 1rem;
+  }
+  
+  .dress-item {
+    font-size: 1.1rem;
+  }
+  
+  .faq-item p {
+    font-size: 1rem;
+  }
+}
