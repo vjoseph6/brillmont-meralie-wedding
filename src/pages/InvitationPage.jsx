@@ -2,6 +2,7 @@ import { useState } from "react";
 import Navigation from "../components/Navigation";
 import CountdownTimer from "../components/CountdownTimer";
 import DecorativeElements from "../components/DecorativeElements";
+import RSVPPage from "./RSVPPage";
 import "./InvitationPage.css";
 
 function InvitationPage() {
@@ -211,12 +212,20 @@ function InvitationPage() {
     </div>
   );
 
-  const renderOtherSections = () => (
-    <div className="coming-soon">
-      <h2>{activeSection.charAt(0).toUpperCase() + activeSection.slice(1)}</h2>
-      <p>This section is coming soon!</p>
-    </div>
-  );
+  const renderOtherSections = () => {
+    if (activeSection === "rsvp") {
+      return <RSVPPage />;
+    }
+
+    return (
+      <div className="coming-soon">
+        <h2>
+          {activeSection.charAt(0).toUpperCase() + activeSection.slice(1)}
+        </h2>
+        <p>This section is coming soon!</p>
+      </div>
+    );
+  };
 
   return (
     <div className="invitation-page romantic-pattern">
