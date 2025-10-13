@@ -37,7 +37,7 @@ function CountdownTimer() {
   return (
     <div className="countdown-container">
       <h2 className="countdown-title">Join Us for the Upcoming Wedding Of</h2>
-      <h3 className="couple-names">Brillmont & Meralie</h3>
+      <h3 className="couple-namess">Brillmont & Meralie</h3>
 
       <div className="countdown-timer">
         <div className="time-unit">
