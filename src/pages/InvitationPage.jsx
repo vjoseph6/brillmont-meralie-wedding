@@ -4,6 +4,7 @@ import CountdownTimer from "../components/CountdownTimer";
 import DecorativeElements from "../components/DecorativeElements";
 import RSVPPage from "./RSVPPage";
 import EntouragePage from "./EntouragePage";
+import VenuePage from "./VenuePage";
 import "./InvitationPage.css";
 
 function InvitationPage() {
@@ -66,9 +67,13 @@ function InvitationPage() {
       <section className="video-section">
         <h2>Our Save-the-Date Video</h2>
         <div className="video-container">
-          <div className="video-placeholder">
-            <p>🎥 Wedding video will be embedded here</p>
-            <small>Video coming soon...</small>
+          <div className="video-wrapper">
+            <iframe
+              src="https://drive.google.com/file/d/1_8B7joSYCIYS-K_6Xzmj7w6WG3Ut-AhN/preview"
+              allow="autoplay"
+              allowFullScreen
+              title="Save the Date Video"
+            ></iframe>
           </div>
         </div>
       </section>
@@ -219,6 +224,9 @@ function InvitationPage() {
     }
     if (activeSection === "entourage") {
       return <EntouragePage />;
+    }
+    if (activeSection === "venue") {
+      return <VenuePage />;
     }
 
     return (

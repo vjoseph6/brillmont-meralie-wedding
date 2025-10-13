@@ -1,0 +1,121 @@
+/* Venue Page - Wedding Theme */
+.venue-page {
+  min-height: 100vh;
+  background: var(--ivory);
+  padding: var(--space-xl);
+}
+
+.venue-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.venue-hero {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.venue-heading {
+  font-size: 3rem;
+  background: var(--gradient-champagne);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 4px 8px rgba(247, 231, 206, 0.3);
+}
+
+.venue-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  margin-top: var(--space-sm);
+}
+
+.venue-card {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: var(--space-xl);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(247, 231, 206, 0.5);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  margin-bottom: var(--space-xl);
+  animation: fadeInUp 0.8s ease both;
+}
+
+.venue-media {
+  position: relative;
+  min-height: 320px;
+}
+
+.venue-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: saturate(1.1) contrast(1.02);
+}
+
+.venue-details {
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.venue-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.venue-icon {
+  font-size: 1.6rem;
+}
+
+.venue-title {
+  font-size: 2rem;
+  color: #ffd700;
+  margin: 0;
+}
+
+.venue-location {
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  margin-bottom: var(--space-md);
+}
+
+.venue-map-link {
+  align-self: flex-start;
+  background: var(--gradient-rose);
+  color: var(--white);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: var(--shadow-romantic);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.venue-map-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(232, 180, 184, 0.4);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .venue-card { grid-template-columns: 1fr; }
+  .venue-media { min-height: 260px; }
+}
+
+@media (max-width: 600px) {
+  .venue-page { padding: var(--space-md); }
+  .venue-heading { font-size: 2.2rem; }
+}
+
