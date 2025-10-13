@@ -525,6 +525,7 @@
   
   .guests-table-container {
     overflow-x: auto;
+    border-radius: var(--radius-md);
   }
   
   .guests-table {
@@ -547,6 +548,17 @@
     font-size: 2rem;
   }
   
+  .form-input,
+  .form-textarea {
+    font-size: 1rem;
+  }
+  
+  .guest-id-display { 
+    padding: var(--space-sm) var(--space-md);
+  }
+  
+  .password-input-group { gap: var(--space-sm); }
+  
   .stats-grid {
     grid-template-columns: 1fr;
   }
@@ -564,4 +576,16 @@
     padding: var(--space-sm);
     font-size: 0.8rem;
   }
+  
+  /* Make long messages wrap on very small screens when table is scrolled */
+  .message-text {
+    white-space: nowrap;
+  }
+}
+
+/* Extra small devices (narrow Android) */
+@media (max-width: 360px) {
+  .rsvp-title { font-size: 1.8rem; }
+  .venue-subtitle { font-size: 1rem; }
+  .submit-btn { padding: var(--space-md) var(--space-xl); font-size: 1rem; }
 }

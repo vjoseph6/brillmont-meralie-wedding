@@ -155,8 +155,17 @@
 }
 
 /* Responsive */
+@media (max-width: 900px) {
+  .two-col { grid-template-columns: 1fr; }
+}
+
 @media (max-width: 768px) {
   .entourage-page { padding: var(--space-md); }
   .ent-heading { font-size: 2.2rem; }
-  .two-col { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .ent-title { font-size: 1.6rem; }
+  .col-title { font-size: 1.1rem; }
+  .ent-section { padding: var(--space-lg); }
 }
