@@ -405,7 +405,8 @@
 .guests-table-container {
   background: rgba(255, 255, 255, 0.9);
   border-radius: var(--radius-lg);
-  overflow: hidden;
+  overflow-x: auto; /* enable horizontal scroll on all viewports */
+  overflow-y: hidden;
   box-shadow: var(--shadow-soft);
 }
 
@@ -413,6 +414,7 @@
   width: 100%;
   border-collapse: collapse;
   font-family: var(--font-sans);
+  min-width: 760px; /* keep columns readable; scrollbar shows if container is narrower */
 }
 
 .guests-table th {
@@ -459,6 +461,16 @@
   max-width: 200px;
 }
 
+.email-cell {
+  max-width: 260px;
+}
+
+.email-link {
+  color: var(--text-primary);
+  text-decoration: underline;
+  word-break: break-word;
+}
+
 .message-text {
   display: block;
   white-space: nowrap;
@@ -487,6 +499,52 @@
   transform: scale(1.1);
 }
 
+.row-actions {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+.approve-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: var(--space-xs);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-normal);
+}
+
+.approve-btn:hover {
+  background: rgba(156, 175, 136, 0.2);
+  transform: scale(1.1);
+}
+
+.approve-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+  transform: none;
+}
+
+.status-badge {
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.status-badge.approved {
+  background: rgba(156, 175, 136, 0.2);
+  color: var(--sage-green);
+}
+
+.status-badge.pending {
+  background: rgba(247, 231, 206, 0.4);
+  color: var(--text-secondary);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .rsvp-page {
@@ -513,10 +571,16 @@
   .password-input-group {
     flex-direction: column;
     align-items: stretch;
+    width: 100%;
   }
   
   .password-input {
     min-width: auto;
+    width: 100%;
+  }
+  
+  .admin-btn {
+    width: 100%;
   }
   
   .stats-grid {
@@ -529,7 +593,7 @@
   }
   
   .guests-table {
-    min-width: 600px;
+    min-width: 760px;
   }
   
   .dashboard-header {
@@ -558,6 +622,9 @@
   }
   
   .password-input-group { gap: var(--space-sm); }
+  .admin-login { padding: var(--space-lg); }
+  .password-input { width: 100%; }
+  .admin-btn { width: 100%; }
   
   .stats-grid {
     grid-template-columns: 1fr;

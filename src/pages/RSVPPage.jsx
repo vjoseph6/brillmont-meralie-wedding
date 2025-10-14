@@ -9,6 +9,7 @@ import {
   orderBy,
   onSnapshot,
   serverTimestamp,
+  updateDoc,
 } from "firebase/firestore";
 import db from "../configs/firebase";
 import "./RSVPPage.css";
@@ -18,6 +19,7 @@ function RSVPPage() {
     firstName: "",
     middleName: "",
     lastName: "",
+    email: "",
     attendance: "",
     message: "",
   });
@@ -63,7 +65,7 @@ function RSVPPage() {
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const guestsData = [];
       querySnapshot.forEach((doc) => {
-        guestsData.push({ id: doc.id, ...doc.data() });
+        guestsData.push({ docId: doc.id, ...doc.data() });
       });
       setGuests(guestsData);
 
@@ -122,6 +124,7 @@ function RSVPPage() {
       if (
         !formData.firstName.trim() ||
         !formData.lastName.trim() ||
+        !formData.email.trim() ||
         !formData.attendance
       ) {
         setSubmitMessage(
@@ -135,6 +138,7 @@ function RSVPPage() {
       const middleName = formData.middleName.trim() || "N/A";
       const firstName = formData.firstName.trim();
       const lastName = formData.lastName.trim();
+      const email = formData.email.trim();
 
       // Check for duplicates
       const isDuplicate = await checkDuplicateName(
@@ -154,8 +158,10 @@ function RSVPPage() {
         firstName,
         middleName,
         lastName,
+        email,
         attendance: formData.attendance,
         message: formData.message.trim(),
+        approved: false,
         timestamp: serverTimestamp(),
       });
 
@@ -165,6 +171,7 @@ function RSVPPage() {
         firstName: "",
         middleName: "",
         lastName: "",
+        email: "",
         attendance: "",
         message: "",
       });
@@ -194,6 +201,17 @@ function RSVPPage() {
         console.error("Error deleting guest:", error);
         alert("Error deleting guest entry.");
       }
+    }
+  };
+
+  const handleApproveGuest = async (guestDocId) => {
+    try {
+      await updateDoc(doc(db, "wedding_rsvp_guests", guestDocId), {
+        approved: true,
+      });
+    } catch (error) {
+      console.error("Error approving guest:", error);
+      alert("Error approving guest.");
     }
   };
 
@@ -252,6 +270,21 @@ function RSVPPage() {
                 id="lastName"
                 name="lastName"
                 value={formData.lastName}
+                onChange={handleInputChange}
+                className="form-input"
+                required
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="email" className="form-label">
+                Email <span className="required">*</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
                 onChange={handleInputChange}
                 className="form-input"
                 required
@@ -393,23 +426,42 @@ function RSVPPage() {
                       <th>First Name</th>
                       <th>Middle Name</th>
                       <th>Last Name</th>
+                      <th>Email</th>
                       <th>Attendance</th>
+                      <th>Status</th>
                       <th>Message</th>
-                      <th>Action</th>
+                      <th>Actions</th>
                     </tr>
                   </thead>
                   <tbody>
                     {guests.map((guest) => (
-                      <tr key={guest.id}>
+                      <tr key={guest.docId}>
                         <td>{guest.id}</td>
                         <td>{guest.firstName}</td>
                         <td>{guest.middleName}</td>
                         <td>{guest.lastName}</td>
+                        <td className="email-cell">
+                          <a
+                            href={`mailto:${guest.email}`}
+                            className="email-link"
+                          >
+                            {guest.email}
+                          </a>
+                        </td>
                         <td>
                           <span
                             className={`attendance-badge ${guest.attendance.toLowerCase()}`}
                           >
                             {guest.attendance}
+                          </span>
+                        </td>
+                        <td>
+                          <span
+                            className={`status-badge ${
+                              guest.approved ? "approved" : "pending"
+                            }`}
+                          >
+                            {guest.approved ? "Approved" : "Pending"}
                           </span>
                         </td>
                         <td className="message-cell">
@@ -427,13 +479,23 @@ function RSVPPage() {
                           )}
                         </td>
                         <td>
-                          <button
-                            onClick={() => handleDeleteGuest(guest.id)}
-                            className="delete-btn"
-                            title="Delete guest"
-                          >
-                            🗑️
-                          </button>
+                          <div className="row-actions">
+                            <button
+                              onClick={() => handleApproveGuest(guest.docId)}
+                              className="approve-btn"
+                              title="Approve guest"
+                              disabled={!!guest.approved}
+                            >
+                              ✅
+                            </button>
+                            <button
+                              onClick={() => handleDeleteGuest(guest.docId)}
+                              className="delete-btn"
+                              title="Delete guest"
+                            >
+                              🗑️
+                            </button>
+                          </div>
                         </td>
                       </tr>
                     ))}
