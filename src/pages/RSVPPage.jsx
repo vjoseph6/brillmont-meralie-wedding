@@ -179,7 +179,7 @@ function RSVPPage() {
       setGuestId((prev) => prev + 1);
     } catch (error) {
       console.error("Error submitting RSVP:", error);
-      setSubmitMessage("❌ An error occurred. Please try again.");
+      setSubmitMessage("❌ An error occurred. Please try again!");
     } finally {
       setIsSubmitting(false);
     }
