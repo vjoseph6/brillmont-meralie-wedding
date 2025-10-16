@@ -5,6 +5,7 @@ import DecorativeElements from "../components/DecorativeElements";
 import RSVPPage from "./RSVPPage";
 import EntouragePage from "./EntouragePage";
 import VenuePage from "./VenuePage";
+import GalleryPage from "./GalleryPage";
 import "./InvitationPage.css";
 
 function InvitationPage() {
@@ -227,6 +228,9 @@ function InvitationPage() {
     }
     if (activeSection === "venue") {
       return <VenuePage />;
+    }
+    if (activeSection === "gallery") {
+      return <GalleryPage />;
     }
 
     return (

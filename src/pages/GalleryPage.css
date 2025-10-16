@@ -1,0 +1,92 @@
+.gallery-page {
+  padding: var(--space-xl) var(--space-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.gallery-header h2 {
+  font-size: 2.25rem;
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+}
+
+.gallery-header p {
+  color: var(--text-secondary);
+  margin-top: var(--space-xs);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-sm);
+}
+
+/* Masonry-like responsive layout using grid spans */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp var(--transition-slow) forwards;
+}
+
+.gallery-item:nth-child(10n + 1) { grid-column: span 6; }
+.gallery-item:nth-child(10n + 2) { grid-column: span 3; }
+.gallery-item:nth-child(10n + 3) { grid-column: span 3; }
+.gallery-item:nth-child(10n + 4) { grid-column: span 4; }
+.gallery-item:nth-child(10n + 5) { grid-column: span 4; }
+.gallery-item:nth-child(10n + 6) { grid-column: span 4; }
+.gallery-item:nth-child(10n + 7) { grid-column: span 3; }
+.gallery-item:nth-child(10n + 8) { grid-column: span 3; }
+.gallery-item:nth-child(10n + 9) { grid-column: span 6; }
+.gallery-item:nth-child(10n + 10) { grid-column: span 6; }
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform var(--transition-normal) ease, filter var(--transition-normal) ease;
+}
+
+.gallery-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,0.08) 100%);
+  pointer-events: none;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.04);
+  filter: saturate(1.1);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .gallery-grid { grid-template-columns: repeat(8, 1fr); }
+  .gallery-item:nth-child(10n + 1) { grid-column: span 8; }
+  .gallery-item:nth-child(10n + 9) { grid-column: span 8; }
+}
+
+@media (max-width: 768px) {
+  .gallery-page { padding: var(--space-lg) var(--space-sm); }
+  .gallery-grid { grid-template-columns: repeat(6, 1fr); }
+  .gallery-item { grid-column: span 6 !important; }
+}
+
+@media (max-width: 480px) {
+  .gallery-header h2 { font-size: 1.75rem; }
+}

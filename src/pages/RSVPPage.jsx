@@ -162,6 +162,7 @@ function RSVPPage() {
         attendance: formData.attendance,
         message: formData.message.trim(),
         approved: false,
+        status: "Pending",
         timestamp: serverTimestamp(),
       });
 
@@ -204,11 +205,38 @@ function RSVPPage() {
     }
   };
 
+  const sendApprovalEmail = async (payload) => {
+    try {
+      const scriptUrl = import.meta.env.VITE_GAS_APPROVAL_WEBAPP_URL;
+      if (!scriptUrl) return; // silently skip if not configured
+      await fetch(scriptUrl, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload),
+      });
+    } catch (err) {
+      // Non-blocking: log only
+      console.error("Email webhook error:", err);
+    }
+  };
+
   const handleApproveGuest = async (guestDocId) => {
     try {
+      const target = guests.find((g) => g.docId === guestDocId);
       await updateDoc(doc(db, "wedding_rsvp_guests", guestDocId), {
         approved: true,
+        status: "Approved",
       });
+
+      if (target && target.email && target.firstName && target.lastName) {
+        await sendApprovalEmail({
+          name: `${target.firstName} ${target.lastName}`,
+          email: target.email,
+          attendance: "Happily Accepts",
+          status: "Approved",
+        });
+      }
     } catch (error) {
       console.error("Error approving guest:", error);
       alert("Error approving guest.");
@@ -461,7 +489,8 @@ function RSVPPage() {
                               guest.approved ? "approved" : "pending"
                             }`}
                           >
-                            {guest.approved ? "Approved" : "Pending"}
+                            {guest.status ||
+                              (guest.approved ? "Approved" : "Pending")}
                           </span>
                         </td>
                         <td className="message-cell">
