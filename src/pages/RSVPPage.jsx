@@ -200,7 +200,7 @@ function RSVPPage() {
         await deleteDoc(doc(db, "wedding_rsvp_guests", guestDocId));
       } catch (error) {
         console.error("Error deleting guest:", error);
-        alert("Error deleting guest entry.");
+        alert("Error deleting guest entry.\n" + (error?.message || ""));
       }
     }
   };
@@ -216,7 +216,6 @@ function RSVPPage() {
         body: JSON.stringify(payload),
       });
     } catch (err) {
-      // Non-blocking: log only
       console.error("Email webhook error:", err);
     }
   };
@@ -224,13 +223,19 @@ function RSVPPage() {
   const handleApproveGuest = async (guestDocId) => {
     try {
       const target = guests.find((g) => g.docId === guestDocId);
+      if (!guestDocId || !target) {
+        throw new Error("Guest not found or missing document id.");
+      }
+
+      // First update Firestore
       await updateDoc(doc(db, "wedding_rsvp_guests", guestDocId), {
         approved: true,
         status: "Approved",
       });
 
-      if (target && target.email && target.firstName && target.lastName) {
-        await sendApprovalEmail({
+      // Then attempt email (do not block approval on failure)
+      if (target.email && target.firstName && target.lastName) {
+        sendApprovalEmail({
           name: `${target.firstName} ${target.lastName}`,
           email: target.email,
           attendance: "Happily Accepts",
@@ -239,7 +244,7 @@ function RSVPPage() {
       }
     } catch (error) {
       console.error("Error approving guest:", error);
-      alert("Error approving guest.");
+      alert("Error approving guest.\n" + (error?.message || ""));
     }
   };
 
