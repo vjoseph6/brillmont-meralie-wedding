@@ -1,4 +1,5 @@
 import { useState } from "react";
+import BrideGroomCasual from "../assets/images/BrideGroom-Casual.jpg";
 import Navigation from "../components/Navigation";
 import CountdownTimer from "../components/CountdownTimer";
 import DecorativeElements from "../components/DecorativeElements";
@@ -22,20 +23,26 @@ function InvitationPage() {
         <h2>Our Love Story</h2>
         <div className="story-content">
           <p>
-            Our love story is a masterpiece painted with the hues of shared
-            laughter, tender moments, and the strength of our bond. From the
-            first flutter of our hearts to this momentous day, every step we've
-            taken together has woven the fabric of our journey, creating a
-            tapestry of love, trust, and unwavering support.
+            Our story started with a simple connection that quickly grew into
+            something real and beautiful.
           </p>
           <p>
-            As we stand hand in hand, surrounded by the love of our cherished
-            ones, I am filled with profound gratitude for the love we share and
-            the adventures that await us. With you by my side, I am emboldened
-            to face any challenge and embrace every joy that life presents.
-            Together, we are ready to script the next chapter of our love
-            story—one that will be filled with boundless love, cherished
-            memories, and the promise of forever.
+            For months, we were in a long-distance relationship, but no matter
+            the distance, our love stayed strong. We shared late-night talks,
+            laughter, and endless “I miss you’s” that made us realize how much
+            we meant to each other.
+          </p>
+          <p>
+            After some time, I decided to go back home, and that’s when our
+            story truly began to bloom. Not long after, we received one of the
+            greatest blessings — we found out we were expecting.
+          </p>
+          <p>
+            Through every part of my pregnancy journey, he has been my biggest
+            support and strength. He stood by me through all the changes, making
+            sure I never felt alone. Now, as we start this new chapter together
+            as husband and wife, we’re thankful for everything that brought us
+            here — the distance, the growth, and the love that made us one.
           </p>
           <p className="signature">With all my heart,</p>
         </div>
@@ -92,27 +99,55 @@ function InvitationPage() {
 
       {/* Dress Code */}
       <section className="dress-code">
-        <h2>Dress Code</h2>
-        <div className="dress-info">
-          <h3>What to Wear:</h3>
-          <div className="dress-items">
-            <div className="dress-item">
-              <span className="icon">👔</span>
-              <span>Gentlemen: Barong or Polo with Black Pants</span>
+        <div className="attire-wrapper">
+          <div className="attire-illustration">
+            <img
+              src={BrideGroomCasual}
+              alt="Dress code illustration"
+              loading="lazy"
+            />
+          </div>
+          <div className="attire-details">
+            <h2>What to Wear</h2>
+            <p className="attire-subtitle">
+              Please keep it elegant and semi-formal.
+            </p>
+            <div className="attire-grid">
+              <div className="attire-card">
+                <div className="attire-icon">👔</div>
+                <div className="attire-text">
+                  <h4>Gentlemen</h4>
+                  <p>Barong or Polo with Black Pants</p>
+                </div>
+              </div>
+              <div className="attire-card">
+                <div className="attire-icon">👗</div>
+                <div className="attire-text">
+                  <h4>Ladies</h4>
+                  <p>Gown or Dress</p>
+                </div>
+              </div>
+              <div className="attire-card">
+                <div className="attire-icon">🎉</div>
+                <div className="attire-text">
+                  <h4>Guests</h4>
+                  <p>Semi-Formal</p>
+                </div>
+              </div>
             </div>
-            <div className="dress-item">
-              <span className="icon">👗</span>
-              <span>Ladies: Gown or Dress</span>
-            </div>
-            <div className="dress-item">
-              <span className="icon">🎉</span>
-              <span>Guests: Semi-Formal</span>
+            <div className="palette-block">
+              <p className="color-preference">
+                We’d love to see you in these shades
+              </p>
+              <div className="swatches" aria-label="Preferred color palette">
+                <span style={{ background: "#d8c7c2" }} />
+                <span style={{ background: "#b89484" }} />
+                <span style={{ background: "#e2bda5" }} />
+                <span style={{ background: "#d5a889" }} />
+                <span style={{ background: "#f3e9e1" }} />
+              </div>
             </div>
           </div>
-          <p className="color-preference">
-            We'd love to see you in these colors:{" "}
-            <strong>Nude or any Neutral Shades</strong>
-          </p>
         </div>
       </section>
 
