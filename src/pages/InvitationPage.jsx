@@ -23,26 +23,25 @@ function InvitationPage() {
         <h2>Our Love Story</h2>
         <div className="story-content">
           <p>
-            Our story started with a simple connection that quickly grew into
-            something real and beautiful.
+            Every great love story starts with distance, and ours was no
+            different.
           </p>
           <p>
-            For months, we were in a long-distance relationship, but no matter
-            the distance, our love stayed strong. We shared late-night talks,
-            laughter, and endless “I miss you’s” that made us realize how much
-            we meant to each other.
+            We began our journey miles apart — two hearts connected by messages,
+            late-night calls, and endless patience. Even though we were far from
+            each other, love always found its way through.
           </p>
           <p>
-            After some time, I decided to go back home, and that’s when our
-            story truly began to bloom. Not long after, we received one of the
-            greatest blessings — we found out we were expecting.
+            Through every challenge and every waiting moment, we grew stronger.
+            Our distance taught us trust, faith, and the beauty of holding on.
           </p>
           <p>
-            Through every part of my pregnancy journey, he has been my biggest
-            support and strength. He stood by me through all the changes, making
-            sure I never felt alone. Now, as we start this new chapter together
-            as husband and wife, we’re thankful for everything that brought us
-            here — the distance, the growth, and the love that made us one.
+            And now, after all the miles, time, and love shared between us — we
+            are finally closing the distance. 💍
+          </p>
+          <p>
+            We’re so happy to say that we’re getting married! What once started
+            as a long-distance love has now become a forever promise.
           </p>
           <p className="signature">With all my heart,</p>
         </div>
