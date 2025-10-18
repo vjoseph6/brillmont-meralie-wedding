@@ -84,13 +84,14 @@ function EntouragePage() {
             items={[
               "Mr. & Mrs. Ralston & Efe Velano",
               "Mr. & Mrs. Frederick & Juna Rayco",
-              "Mr. & Mrs. Salvation & Siony Mercader",
+              "Mr. & Mrs. Dominador Jr. & Siony Mercader",
               "Mr. & Mrs. John & Jenny Surban",
               "Mr. & Mrs. Christopher & Marichu Luzano",
               "Mr. & Mrs. Danny & Joji Sagarino",
               "Mr. & Mrs. Niño & Phoebe Dela Cruz",
               "Mr. & Mrs. Edgardo & Esmeralda Luzano",
               "Mr. & Mrs. Allen & Melodia Faulkner",
+              "Mr. & Mrs. TBD",
             ]}
           />
         </Section>
