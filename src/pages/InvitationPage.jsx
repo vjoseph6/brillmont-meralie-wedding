@@ -43,7 +43,7 @@ function InvitationPage() {
             We’re so happy to say that we’re getting married! What once started
             as a long-distance love has now become a forever promise.
           </p>
-          <p className="signature">With all my heart,</p>
+          <p className="signature"></p>
         </div>
       </section>
 
