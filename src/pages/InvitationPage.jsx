@@ -89,10 +89,10 @@ function InvitationPage() {
       <section className="look-forward">
         <h2>We Look Forward to Seeing You!</h2>
         <p>
-          Now, the time has come for them to embark on their greatest journey
-          yet—to unite their lives in the eternal bond of marriage. They invite
-          you to witness the merging of their worlds, the fusion of their
-          hearts, and the creation of their love story.
+          Now, the time has come for us to embark on our greatest journey yet—to
+          unite their lives in the eternal bond of marriage. We invite you to
+          witness the merging of our worlds, the fusion of our hearts, and the
+          creation of our love story.
         </p>
       </section>
 
