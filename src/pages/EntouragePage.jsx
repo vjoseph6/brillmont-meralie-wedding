@@ -73,7 +73,7 @@ function EntouragePage() {
             leftItems={["Father: Alex Dutosme", "Mother: Mercy Dutosme"]}
             rightTitle="Groom’s Parents"
             rightItems={[
-              "Father: Wenefredo Tampus",
+              "Father: Winefredo Tampus",
               "Mother: Maria Erma Tampus",
             ]}
           />
@@ -100,7 +100,9 @@ function EntouragePage() {
             <div className="secondary-card">
               <h4 className="secondary-title font-serif">Veil</h4>
               <ul className="ent-list">
-                <li className="ent-item">Lucile</li>
+                <li className="ent-item">
+                  Mr. & Mrs. Kenneth & Luzcille Jumadla
+                </li>
               </ul>
             </div>
             <div className="secondary-card">
@@ -114,7 +116,7 @@ function EntouragePage() {
             <div className="secondary-card">
               <h4 className="secondary-title font-serif">Candle</h4>
               <ul className="ent-list">
-                <li className="ent-item">Mr. & Mrs. Nestor & Jocelyn Adag</li>
+                <li className="ent-item">Mr & Mrs. Joel & Tessie Dihayco</li>
               </ul>
             </div>
           </div>
@@ -160,7 +162,7 @@ function EntouragePage() {
               "Jay Sagarino",
               "Vence Andre Luzano",
               "Von Andrielle Luzano",
-              "TBD",
+              "Clive Vincent Ortiz",
             ]}
           />
         </Section>
@@ -170,7 +172,7 @@ function EntouragePage() {
             items={[
               "Nicole Christiana Fernandes",
               "Chloe Christiana Fernandes",
-              "TBD",
+              "Zichri Astlyr Niña Elle Dela Cruz",
             ]}
           />
         </Section>
@@ -190,9 +192,9 @@ function EntouragePage() {
               </ul>
             </div>
             <div className="secondary-card">
-              <h4 className="secondary-title font-serif">Other</h4>
+              <h4 className="secondary-title font-serif">Coin Bearer</h4>
               <ul className="ent-list">
-                <li className="ent-item">TBD</li>
+                <li className="ent-item">Vaughn Drei Dumasig</li>
               </ul>
             </div>
           </div>
