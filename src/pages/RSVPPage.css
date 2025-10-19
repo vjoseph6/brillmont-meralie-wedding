@@ -545,6 +545,153 @@
   color: var(--text-secondary);
 }
 
+/* Message Icon Button */
+.message-icon-btn {
+  background: var(--gradient-champagne);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-soft);
+  min-width: 40px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.message-icon-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: var(--shadow-medium);
+  background: var(--gradient-rose);
+}
+
+.message-icon-btn:active {
+  transform: translateY(0) scale(0.95);
+}
+
+/* Message Modal */
+.message-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--space-lg);
+  backdrop-filter: blur(4px);
+}
+
+.message-modal {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-romantic);
+  max-width: 500px;
+  width: 100%;
+  max-height: 80vh;
+  overflow: hidden;
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.message-modal-header {
+  background: var(--gradient-rose);
+  padding: var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.message-modal-title {
+  color: var(--white);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+  font-family: var(--font-display);
+}
+
+.message-modal-close {
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: var(--space-xs);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-normal);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.message-modal-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.message-modal-content {
+  padding: var(--space-xl);
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+.message-modal-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  margin: 0;
+  font-family: var(--font-serif);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.message-modal-footer {
+  padding: var(--space-lg) var(--space-xl);
+  background: rgba(247, 231, 206, 0.3);
+  display: flex;
+  justify-content: center;
+}
+
+.message-modal-btn {
+  background: var(--gradient-champagne);
+  color: var(--text-primary);
+  border: none;
+  padding: var(--space-md) var(--space-xl);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-soft);
+  min-width: 100px;
+}
+
+.message-modal-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+  background: var(--gradient-rose);
+  color: var(--white);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .rsvp-page {
@@ -601,6 +748,37 @@
     gap: var(--space-md);
     text-align: center;
   }
+  
+  /* Message Modal Responsive */
+  .message-modal-overlay {
+    padding: var(--space-md);
+  }
+  
+  .message-modal {
+    max-width: 100%;
+    max-height: 90vh;
+  }
+  
+  .message-modal-header {
+    padding: var(--space-md);
+  }
+  
+  .message-modal-title {
+    font-size: 1.1rem;
+  }
+  
+  .message-modal-content {
+    padding: var(--space-lg);
+    max-height: 60vh;
+  }
+  
+  .message-modal-text {
+    font-size: 1rem;
+  }
+  
+  .message-modal-footer {
+    padding: var(--space-md) var(--space-lg);
+  }
 }
 
 @media (max-width: 480px) {
@@ -647,6 +825,37 @@
   /* Make long messages wrap on very small screens when table is scrolled */
   .message-text {
     white-space: nowrap;
+  }
+  
+  /* Message Modal Extra Small */
+  .message-modal-overlay {
+    padding: var(--space-sm);
+  }
+  
+  .message-modal-header {
+    padding: var(--space-sm) var(--space-md);
+  }
+  
+  .message-modal-title {
+    font-size: 1rem;
+  }
+  
+  .message-modal-content {
+    padding: var(--space-md);
+    max-height: 50vh;
+  }
+  
+  .message-modal-text {
+    font-size: 0.9rem;
+  }
+  
+  .message-modal-footer {
+    padding: var(--space-sm) var(--space-md);
+  }
+  
+  .message-modal-btn {
+    padding: var(--space-sm) var(--space-lg);
+    font-size: 0.9rem;
   }
 }
 

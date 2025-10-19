@@ -35,6 +35,8 @@ function RSVPPage() {
     notAttending: 0,
     withMessages: 0,
   });
+  const [showMessageModal, setShowMessageModal] = useState(false);
+  const [selectedMessage, setSelectedMessage] = useState("");
 
   // Get next available guest ID
   useEffect(() => {
@@ -246,6 +248,16 @@ function RSVPPage() {
       console.error("Error approving guest:", error);
       alert("Error approving guest.\n" + (error?.message || ""));
     }
+  };
+
+  const handleShowMessage = (message) => {
+    setSelectedMessage(message);
+    setShowMessageModal(true);
+  };
+
+  const handleCloseMessageModal = () => {
+    setShowMessageModal(false);
+    setSelectedMessage("");
   };
 
   return (
@@ -500,14 +512,13 @@ function RSVPPage() {
                         </td>
                         <td className="message-cell">
                           {guest.message ? (
-                            <span
-                              className="message-text"
-                              title={guest.message}
+                            <button
+                              onClick={() => handleShowMessage(guest.message)}
+                              className="message-icon-btn"
+                              title="Click to view full message"
                             >
-                              {guest.message.length > 50
-                                ? `${guest.message.substring(0, 50)}...`
-                                : guest.message}
-                            </span>
+                              💬
+                            </button>
                           ) : (
                             <span className="no-message">-</span>
                           )}
@@ -540,6 +551,38 @@ function RSVPPage() {
           )}
         </div>
       </div>
+
+      {/* Message Modal */}
+      {showMessageModal && (
+        <div
+          className="message-modal-overlay"
+          onClick={handleCloseMessageModal}
+        >
+          <div className="message-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="message-modal-header">
+              <h3 className="message-modal-title">Guest Message</h3>
+              <button
+                onClick={handleCloseMessageModal}
+                className="message-modal-close"
+                title="Close"
+              >
+                ✕
+              </button>
+            </div>
+            <div className="message-modal-content">
+              <p className="message-modal-text">{selectedMessage}</p>
+            </div>
+            <div className="message-modal-footer">
+              <button
+                onClick={handleCloseMessageModal}
+                className="message-modal-btn"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
