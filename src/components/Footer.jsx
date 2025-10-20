@@ -17,6 +17,7 @@ function Footer() {
                 href="https://github.com/vjoseph6"
                 className="dev-link"
                 target="_blank"
+                rel="noopener noreferrer"
                 title="GitHub"
               >
                 <svg
@@ -32,6 +33,7 @@ function Footer() {
                 href="https://www.linkedin.com/in/joseph-lhee-villariasa-228901369/"
                 className="dev-link"
                 target="_blank"
+                rel="noopener noreferrer"
                 title="LinkedIn"
               >
                 <svg
@@ -44,9 +46,8 @@ function Footer() {
                 </svg>
               </a>
               <a
-                href="vjosephlhee7@gmail.com"
+                href="mailto:vjosephlhee7@gmail.com"
                 className="dev-link"
-                target="_blank"
                 title="Email"
               >
                 <svg
@@ -62,6 +63,7 @@ function Footer() {
                 href="https://petsky9.wordpress.com/"
                 className="dev-link"
                 target="_blank"
+                rel="noopener noreferrer"
                 title="Portfolio"
               >
                 <svg
