@@ -202,7 +202,6 @@ function EntouragePage() {
           </div>
         </Section>
       </div>
-      <Footer />
     </div>
   );
 }
