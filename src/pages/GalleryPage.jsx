@@ -1,4 +1,5 @@
 import "./GalleryPage.css";
+import Footer from "../components/Footer";
 import img1 from "../assets/images/bmoi1.jpg";
 import img2 from "../assets/images/bmoi2.jpg";
 import img3 from "../assets/images/bmoi3.jpg";

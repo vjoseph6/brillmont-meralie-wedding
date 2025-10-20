@@ -3,6 +3,7 @@ import BrideGroomCasual from "../assets/images/BrideGroom-Casual.jpg";
 import Navigation from "../components/Navigation";
 import CountdownTimer from "../components/CountdownTimer";
 import DecorativeElements from "../components/DecorativeElements";
+import Footer from "../components/Footer";
 import RSVPPage from "./RSVPPage";
 import EntouragePage from "./EntouragePage";
 import VenuePage from "./VenuePage";
@@ -289,6 +290,7 @@ function InvitationPage() {
           ? renderWeddingContent()
           : renderOtherSections()}
       </div>
+      <Footer />
     </div>
   );
 }

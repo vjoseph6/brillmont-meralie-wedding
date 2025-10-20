@@ -1,4 +1,5 @@
 import "./VenuePage.css";
+import Footer from "../components/Footer";
 import HolyFamilyImage from "../assets/images/HolyFamily.jpg";
 import VenueImage from "../assets/images/Venue.jpg";
 

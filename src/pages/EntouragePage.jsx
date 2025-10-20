@@ -1,4 +1,5 @@
 import "./EntouragePage.css";
+import Footer from "../components/Footer";
 
 function Section({ title, icon, children }) {
   return (
@@ -201,6 +202,7 @@ function EntouragePage() {
           </div>
         </Section>
       </div>
+      <Footer />
     </div>
   );
 }

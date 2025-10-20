@@ -1,0 +1,127 @@
+/* Footer Style 2 - Modern Card Style */
+.footer-modern {
+  background: #fff;
+  padding: 60px 40px 30px;
+}
+
+.footer-modern .content {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.footer-modern .left-section {
+  text-align: left;
+}
+
+.footer-modern .couple-names {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.2rem;
+  color: #b89484;
+  margin-bottom: 10px;
+}
+
+.footer-modern .tagline {
+  color: #8a6f64;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.footer-modern .right-section {
+  text-align: right;
+}
+
+.footer-modern .developer-card {
+  background: linear-gradient(135deg, #f3e9e1 0%, #e2bda5 100%);
+  padding: 20px;
+  border-radius: 12px;
+  display: inline-block;
+  text-align: center;
+}
+
+.footer-modern .dev-label {
+  font-size: 0.85rem;
+  color: #8a6f64;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-modern .dev-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: #6a564f;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.footer-modern .dev-links {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.footer-modern .dev-link {
+  color: #6a564f;
+  text-decoration: none;
+  font-size: 1.1rem;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.footer-modern .dev-link:hover {
+  background: #b89484;
+  color: white;
+  transform: scale(1.1);
+}
+
+.footer-modern .copyright {
+  text-align: center;
+  padding-top: 30px;
+  margin-top: 30px;
+  border-top: 1px solid #e2bda5;
+  color: #8a6f64;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-modern {
+    padding: 40px 20px 20px;
+  }
+  
+  .footer-modern .content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+  
+  .footer-modern .left-section {
+    text-align: center;
+  }
+  
+  .footer-modern .right-section {
+    text-align: center;
+  }
+  
+  .footer-modern .couple-namess {
+    font-size: 1.8rem;
+  }
+  
+  .footer-modern .developer-card {
+    padding: 15px;
+  }
+  
+  .footer-modern .dev-name {
+    font-size: 1rem;
+  }
+}

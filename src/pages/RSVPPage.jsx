@@ -12,6 +12,7 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import db from "../configs/firebase";
+import Footer from "../components/Footer";
 import "./RSVPPage.css";
 
 function RSVPPage() {
