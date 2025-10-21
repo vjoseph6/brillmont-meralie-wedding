@@ -46,7 +46,7 @@ function Footer() {
                 </svg>
               </a>
               <a
-                href="mailto:vjosephlhee7@gmail.com"
+                href="mailto:vjosephlhee@gmail.com"
                 className="dev-link"
                 title="Email"
               >
