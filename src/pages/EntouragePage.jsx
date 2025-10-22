@@ -154,7 +154,7 @@ function EntouragePage() {
           />
         </Section>
 
-        <Section title="Groomsmen" icon="🤵‍♂️">
+        <Section title="Groomsmen" icon="🤵">
           <CardGrid
             items={[
               "Psalm Zachariah Jayme",
