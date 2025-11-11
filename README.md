@@ -49,8 +49,8 @@ The site is fully responsive, mobile-first, and optimized for performance. It de
 The project is deployed on **Vercel**, providing smooth CI/CD integration and global content delivery.  
 Visit the **Live Demo** or explore the source code on GitHub.
 
-- 🔗 **Live Demo:** [Add your live link here]
-- 💻 **GitHub Repo:** [Add your repository link here]
+- 🔗 **Live Demo:** https://brillmont-meralie-wedding.vercel.app/
+- 💻 **GitHub Repo:** https://github.com/vjoseph6/brillmont-meralie-wedding
 
 ---
 
