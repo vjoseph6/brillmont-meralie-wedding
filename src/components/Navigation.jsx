@@ -13,6 +13,13 @@ function Navigation({ activeSection, onSectionChange }) {
   ];
 
   const handleSelect = (id) => {
+    // Scroll to top instantly when navigation item is clicked
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth", // Change to "instant" for immediate scroll
+    });
+
     onSectionChange(id);
     setMenuOpen(false); // close menu after selection (mobile)
   };
