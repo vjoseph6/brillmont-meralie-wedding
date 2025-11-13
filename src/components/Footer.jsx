@@ -60,7 +60,7 @@ function Footer() {
                 </svg>
               </a>
               <a
-                href="https://petsky9.wordpress.com/"
+                href="https://madebypetsky.vercel.app/"
                 className="dev-link"
                 target="_blank"
                 rel="noopener noreferrer"
