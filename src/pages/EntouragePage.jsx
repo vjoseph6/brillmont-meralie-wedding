@@ -147,7 +147,7 @@ function EntouragePage() {
               "Zuleike Margarette Jayme",
               "Precious Faith Jayme",
               "Akiko Nogra",
-              "Wenna Fritz Tampus",
+              "Mary Janine Luzano",
               "Caselle Faith Luzano",
               "Rheann Uriel Luzano",
               "Jernalyn Luzano",
