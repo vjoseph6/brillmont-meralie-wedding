@@ -92,7 +92,8 @@ function EntouragePage() {
               "Mr. & Mrs. Niño & Phoebe Dela Cruz",
               "Mr. & Mrs. Edgardo & Esmeralda Luzano",
               "Mr. & Mrs. Allen & Melodia Faulkner",
-              "Mr. & Mrs. Epitacio & Imelda Inot",
+              "Mr. & Mrs. Epitacio Jr. & Imelda Inot",
+              "Mr. & Mrs. Roy & Ma. Faye Patigayon",
             ]}
           />
         </Section>
