@@ -145,7 +145,7 @@ function EntouragePage() {
         <Section title="Bridesmaids" icon="👗">
           <CardGrid
             items={[
-              "Zuleike Margarette Jayme",
+              "Zuleika Margarette Jayme",
               "Precious Faith Jayme",
               "Akiko Nogra",
               "Mary Janine Luzano",
